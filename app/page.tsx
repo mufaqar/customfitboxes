@@ -2,10 +2,10 @@
 export default function Home() {
   return (
     <main>
-<h1>
-  Eco-Friendly, Premium,
+      <h1>
+        Eco-Friendly, Premium,
 
-</h1>
+      </h1>
     </main>
   );
 }
