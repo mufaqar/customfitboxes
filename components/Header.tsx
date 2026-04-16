@@ -3,12 +3,15 @@ import { NavigationItem, Navlinks } from "@/data/NavLinks";
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react";
-import { FaChevronRight, FaSearch } from "react-icons/fa"
+import { FaBars, FaChevronRight, FaCross, FaPhoneAlt, FaPhoneVolume, FaSearch } from "react-icons/fa"
 import { HiChevronDown } from "react-icons/hi"
+import { MdClose } from "react-icons/md";
+import { MblMenu } from "./MblMenu";
 
 const links: NavigationItem[] = Navlinks;
 
 const Header = () => {
+    const [mblMenu, setMblMenu] = useState(false);
     const [activeMenu, setActiveMenu] = useState<string | null>(null);
     const toggleMenu = (label: string) => {
         setActiveMenu(prev => (prev === label ? null : label));
@@ -32,14 +35,24 @@ const Header = () => {
                     <Link href="/" className="inline-flex">
                         <Image src="/images/logowhite.png" alt="logo" width={170} height={90} />
                     </Link>
+
                 </div>
-                <div className="w-full md:block hidden w-80 xl:w-96">
+                <div className="md:hidden flex items-center gap-5">
+                    <Link href="tel:+1(332)2529988" className="text-white text-2xl">
+                        <FaPhoneAlt />
+                    </Link>
+                    <button onClick={() => setMblMenu(!mblMenu)} className="text-white text-2xl">
+                        {!mblMenu ? <FaBars /> : <MdClose />}
+                    </button>
+                </div>
+                {mblMenu && <MblMenu setMblMenu={setMblMenu} />}
+                <div className="md:block hidden w-80 xl:w-96">
                     <form className="rounded-md border border-black/20 bg-white flex items-center gap-x-3 pr-3 pl-4 h-10 shadow-[0_0_20px_-3px_rgb(211,211,211)] ">
                         <input
                             id="search"
                             name="search"
                             placeholder="Search by product, categories..."
-                            className="w-full outline-none" />
+                            className="w-full outline-none traking-wider text-xs sm:text-sm h-full text-black" />
                         <button className="text-title/50">
                             <FaSearch />
                         </button>
@@ -60,7 +73,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto md:px-6 px-4 flex items-center justify-between mt-3">
+            <div className="container mx-auto md:px-6 px-4 md:flex hidden items-center justify-between mt-3">
                 <nav>
                     <ul ref={navRef} className="flex md:flex-row gap-x-6 lg:gap-x-10 items-center justify-start">
 
@@ -88,7 +101,7 @@ const Header = () => {
                                         </Link>
 
                                         {activeMenu === item.label && (
-                                            <div className="absolute w-60 top-full bg-white z-50 rounded-lg shadow-lg flex flex-col divide-y divide-title/20">
+                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-60 top-full bg-white z-50 rounded-lg shadow-lg flex flex-col divide-y divide-title/20">
                                                 {item.children?.map((child) => (
                                                     <Link
                                                         key={child.label}
@@ -114,7 +127,7 @@ const Header = () => {
                                         </Link>
 
                                         {activeMenu === item.label && (
-                                            <div className="absolute w-full top-full -mt-4 pt-4 left-0 right-0">
+                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-full top-full -mt-4 pt-4 left-0 right-0">
                                                 <div className="container mx-auto bg-white text-title z-30 rounded-lg shadow-lg px-3 sm:px-10 pb-10 pt-5">
                                                     {item.children?.map((group) => (
                                                         <div key={group.group}>
