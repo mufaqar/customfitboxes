@@ -1,11 +1,9 @@
+import Banner from "@/components/Home/Banner";
 
 export default function Home() {
   return (
     <main>
-      <h1>
-        Eco-Friendly, Premium,
-
-      </h1>
+      <Banner />
     </main>
   );
 }
