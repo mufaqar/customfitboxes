@@ -1,16 +1,115 @@
-import React from 'react'
 
 const RequestQuote = () => {
     return (
-        <section className='py-16'>
+        <section className='py-16 bg-background'>
             <div className='container mx-auto md:px-0 px-4'>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl text-primary text-center font-semibold leading-tight'>
-                    Luxury Finishing Options
+                    Request a Quote
                 </h2>
-                <p className='text-base leading-5 text-center mt-1'>
-                    Elevate your packaging with stunning premium finishes that enhance appeal and sophistication. From gold and silver foils to holographic effects,
-                    our high-quality finishing options ensure a luxurious, eye-catching presentation that leaves a lasting impression.
+                <p className='text-base leading-5 text-center mt-1 max-w-[870px] mx-auto'>
+                    Get a custom packaging quote tailored to your needs. Share your specifications, and our experts will provide
+                    a fast, competitive estimate. Let’s create something amazing!
                 </p>
+            </div>
+            <div className='container mx-auto md:px-0 px-4 mt-10'>
+                <div className='border border-black rounded-xl px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto'>
+                    <form className='grid md:grid-cols-2 grid-cols-1 gap-6 md:gap-4 sm:p-3'>
+                        <div className='flex flex-row gap-6 md:gap-4'>
+                            <input
+                                type='number'
+                                name='length'
+                                placeholder='Length'
+                                className='h-10 w-2/3 border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                            <input
+                                type='number'
+                                name='width'
+                                placeholder='Width'
+                                className='h-10 w-1/3 border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                        </div>
+                        <div className='flex flex-row gap-6 md:gap-4'>
+                            <input
+                                type='number'
+                                name='depth'
+                                placeholder='Depth'
+                                className='h-10 w-2/3 border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                            <select
+                                name='unit'
+                                className="h-10 w-1/3 border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none">
+                                <option>Select Unit</option>
+                                <option>Inches</option>
+                                <option>CM</option>
+                                <option>MM</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select required
+                                name='product'
+                                className="h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none">
+                                <option>Scissors Boxes</option>
+                                <option> 5ml Bottle Boxes</option>
+                                <option>Swirl Jewelry Boxes</option>
+                                <option>Pet Food Serving Boxes</option>
+                            </select>
+                        </div>
+                        <div>
+                            <select
+                                name='color'
+                                className="h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none">
+                                <option>Color</option>
+                                <option>1-Color</option>
+                                <option>2-Color</option>
+                                <option>3-Color</option>
+                                <option>4-Color</option>
+                                <option>4/1-Color</option>
+                                <option>4/2-Color</option>
+                                <option>4/3-Color</option>
+                                <option>4/4-Color</option>
+                            </select>
+                        </div>
+                        <div>
+                            <input
+                                type='number'
+                                name='quantity'
+                                placeholder='Quantity'
+                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                        </div>
+                        <div>
+                            <input
+                                type='text'
+                                name='name'
+                                placeholder='Enter your name'
+                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                        </div>
+                        <div>
+                            <input
+                                type='tel'
+                                name='phone'
+                                placeholder='+1 123-123-1234'
+                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                        </div>
+                        <div>
+                            <input
+                                type='email'
+                                name='email'
+                                placeholder='Email'
+                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none' />
+                        </div>
+                        <div>
+                            <input type="file"
+                                className="h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none" />
+                        </div>
+                        <div>
+                            <textarea name="message"
+                                placeholder='Write your message'
+                                className='h-10 w-full mx-auto border-b border-zinc-800 py-1 bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none shadow-none'></textarea>
+                        </div>
+                        <div className='absolute -bottom-4 flex justify-center left-0 w-full z-10'>
+                            <button type='submit' className='text-base font-normal uppercase text-white bg-primary hover:scale-105 transition-all duration-200 h-12 px-10 rounded-md'>
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     )

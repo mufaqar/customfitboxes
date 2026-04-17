@@ -22,3 +22,57 @@ body {
   font-family: var(--font-poppins);
   color: var(--desc);
 }
+
+.scrollDiv {
+  direction: rtl;
+}
+
+/* Keep content normal */
+.scrollContent {
+  direction: ltr;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e9e7e7;
+  border-radius: 100vh;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  /* primary color */
+  border-radius: 50vh;
+}
+
+.scrollDiv::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+  /* darker on hover */
+}
+
+.scrollContent h2 {
+  @apply text-xl font-semibold text-primary mb-4;
+}
+
+.scrollContent h3,
+.scrollContent h4,
+.scrollContent h5,
+.scrollContent h6 {
+  @apply text-lg font-semibold mt-3;
+}
+
+.scrollContent p {
+  @apply text-sm mt-3;
+}
+
+.scrollContent ul {
+  @apply list-disc mt-10 pl-6 flex flex-col gap-y-5 text-sm;
+}
+
+.scrollContent a {
+  @apply text-primary hover:underline;
+}
