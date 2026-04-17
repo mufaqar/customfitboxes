@@ -3,7 +3,7 @@
 export const Navlinks = [
     {
         label: "Products",
-        href: "/products",
+        href: "/all-products",
         type: "link",
         icon: "/images/box.png",
     },
