@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
 
 :root {
   --primary: #1a4885;
@@ -18,4 +20,5 @@
 
 body {
   font-family: var(--font-poppins);
+  color: var(--desc);
 }

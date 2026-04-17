@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 const Footer = () => {
     return (
         <footer>
-            <div className='container mx-auto md:px-6 px-4 grid md:grid-cols-4 grid-cols-1 gap-y-14 border-b border-zinc-200 pb-14 pt-10 md:gap-y-0 gap-x-0 md:gap-x-5 lg:gap-x-8'>
+            <div className='container mx-auto md:px-0 px-4 grid md:grid-cols-4 grid-cols-1 gap-y-14 border-b border-zinc-200 pb-14 pt-10 md:gap-y-0 gap-x-0 md:gap-x-5 lg:gap-x-8'>
                 <div className='md:col-span-1'>
                     <Link href="/" className="inline-flex">
                         <Image src="/images/logofooter.png" alt="logo" width={160} height={70} />
@@ -166,7 +166,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='container mx-auto md:px-6 px-4 flex flex-col items-center justify-between gap-y-3 py-12 md:flex-row md:gap-y-0 md:gap-x-4'>
+            <div className='container mx-auto md:px-0 px-4 flex flex-col items-center justify-between gap-y-3 py-12 md:flex-row md:gap-y-0 md:gap-x-4'>
                 <p className='text-sm sm:text-base text-title font-normal'>© 2024 Customfitboxes.All rights reserved.</p>
                 <div className='md:w-60'>
                     <Image src="/images/paymentImg.jpg" alt='paymentImg' width={897} height={96} />

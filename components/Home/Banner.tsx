@@ -5,7 +5,7 @@ import { IoMdArrowForward } from 'react-icons/io'
 const Banner = () => {
     return (
         <section className='pb-8 pt-5 md:py-10 lg:py-16 bg-background'>
-            <div className='container mx-auto md:px-6 px-4 flex md:flex-row flex-col gap-10 justify-between'>
+            <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col gap-10 justify-between'>
                 <div className='md:w-1/2 w-full'>
                     <Link href="#" className='text-base font-semibold text-primary hover:text-white border border-primary bg-transparent hover:bg-primary rounded-md px-4 whitespace-nowrap h-12 duration-300 inline-flex items-center justify-center'>
                         Customer Packaging Boxes

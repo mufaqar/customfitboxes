@@ -30,7 +30,7 @@ const Header = () => {
     }, []);
     return (
         <header className="bg-primary py-2 relative">
-            <div className='container mx-auto md:px-6 px-4 flex items-center justify-between'>
+            <div className='container mx-auto md:px-0 px-4 flex items-center justify-between'>
                 <div>
                     <Link href="/" className="inline-flex">
                         <Image src="/images/logowhite.png" alt="logo" width={170} height={90} />
@@ -73,7 +73,7 @@ const Header = () => {
                     </div>
                 </div>
             </div>
-            <div className="container mx-auto md:px-6 px-4 md:flex hidden items-center justify-between mt-3">
+            <div className="container mx-auto md:px-0 px-4 md:flex hidden items-center justify-between mt-3">
                 <nav>
                     <ul ref={navRef} className="flex md:flex-row gap-x-6 lg:gap-x-10 items-center justify-start">
 
