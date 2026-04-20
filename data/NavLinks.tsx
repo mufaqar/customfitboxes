@@ -10,7 +10,7 @@ export const Navlinks = [
 
     {
         label: "Industries",
-        href: "/products",
+        href: "/industries",
         type: "mega",
         icon: "/images/box.png",
         children: [
@@ -19,7 +19,7 @@ export const Navlinks = [
                 items: [
                     {
                         label: "Corrugated Boxes",
-                        href: "/corrugated-boxes",
+                        href: "/category/corrugated-boxes",
                         icon: "/images/box.png",
                     },
                     {

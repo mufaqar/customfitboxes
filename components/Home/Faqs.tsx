@@ -51,7 +51,7 @@ const Faqs = () => {
                     {faqsData.map((faq, index) => (
                         <div
                             key={index}
-                            className={`overflow-hidden border-b border-black shadow-md`}>
+                            className={`overflow-hidden border-b border-black/50 shadow-md`}>
                             {/* Question */}
                             <button
                                 onClick={() => toggleFAQ(index)}

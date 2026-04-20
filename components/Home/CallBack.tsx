@@ -21,21 +21,21 @@ const CallBack = () => {
                                 type='text'
                                 name='name'
                                 placeholder='Enter your name'
-                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
+                                className='h-10 w-full border-b border-black/50 bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
                         </div>
                         <div>
                             <input
                                 type='tel'
                                 name='phone'
                                 placeholder='+1 123-123-1234'
-                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
+                                className='h-10 w-full border-b border-black/50 bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
                         </div>
                         <div>
                             <input
                                 type='email'
                                 name='email'
                                 placeholder='Email'
-                                className='h-10 w-full border-b border-black bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
+                                className='h-10 w-full border-b border-black/50 bg-transparent text-sm sm:text-base text-title/60 placeholder:text-title/60 outline-none' />
                         </div>
                         <div className='md:col-span-3 mt-10 lg:mt-20'>
                             <button type='submit' className='text-base font-normal text-white bg-primary hover:scale-105 transition-all duration-200 w-fit mx-auto h-12 px-8 rounded-md flex gap-4 items-center'>
