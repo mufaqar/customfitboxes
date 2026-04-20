@@ -49,13 +49,13 @@ const Footer = () => {
                         <h6 className='font-semibold text-xl text-title sm:text-2xl'>Explore</h6>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/why-us" className='font-normal cursor-pointer text-title hover:underline'>
                                     Why Us
                                 </Link>
                             </li>
 
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/about-us" className='font-normal cursor-pointer text-title hover:underline'>
                                     About Us
                                 </Link>
                             </li>
@@ -142,18 +142,18 @@ const Footer = () => {
                         <h6 className='font-semibold text-xl text-title sm:text-2xl'>Legals</h6>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/privacy-policy" className='font-normal cursor-pointer text-title hover:underline'>
                                     Privacy Policy
                                 </Link>
                             </li>
 
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/terms-&-conditions" className='font-normal cursor-pointer text-title hover:underline'>
                                     Terms & Conditions
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/terms-&-conditions" className='font-normal cursor-pointer text-title hover:underline'>
                                     Return Policy
                                 </Link>
                             </li>
