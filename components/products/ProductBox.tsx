@@ -15,8 +15,8 @@ const ProductBox = ({ data, view }: Props) => {
           <Image src="/images/essential-oil.jpg" alt='feature' width={310} height={384} className='w-full h-full object-cover object-center' />
         </div>
         <div className='md:w-4/5 w-full px-6 py-8 flex flex-col gap-y-4'>
-          <Link href="#" className='md:text-base font-semibold text-title'>
-            Essential Oil Boxes
+          <Link href="/product/corrugated-mailer-boxes" className='md:text-base font-semibold text-title'>
+            Corrugated Mailer Boxes
           </Link>
           <p className='text-sm text-desc'>
             Custom corrugated mailer boxes are lightweight yet strong shipping boxes, equipped with fluted cardboard that provides additional protection. They are entirely customizable with your logo, colors, and design, so you can use them to ship products through the mail smoothly, start subscriptions, brand opportunities when they reach the customer, and so on.
@@ -32,8 +32,8 @@ const ProductBox = ({ data, view }: Props) => {
         <Image src="/images/essential-oil.jpg" alt='feature' width={310} height={384} className='w-full h-full object-cover object-center' />
       </div>
       <div className='px-6 py-8 flex flex-col gap-y-4'>
-        <Link href="#" className='md:text-base font-semibold text-center text-title flex w-full justify-center items-center'>
-          Essential Oil Boxes
+        <Link href="/product/corrugated-mailer-boxes" className='md:text-base font-semibold text-center text-title flex w-full justify-center items-center'>
+          Corrugated Mailer Boxes
         </Link>
       </div>
     </div>

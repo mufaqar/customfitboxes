@@ -101,7 +101,7 @@ const Header = () => {
                                         </Link>
 
                                         {activeMenu === item.label && (
-                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-60 top-full bg-white z-50 rounded-lg shadow-lg flex flex-col divide-y divide-title/20">
+                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-60 top-full bg-white rounded-lg shadow-lg flex flex-col divide-y divide-title/20 z-[999] ">
                                                 {item.children?.map((child) => (
                                                     <Link
                                                         key={child.label}
@@ -127,8 +127,8 @@ const Header = () => {
                                         </Link>
 
                                         {activeMenu === item.label && (
-                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-full top-full -mt-4 pt-4 left-0 right-0">
-                                                <div className="container mx-auto bg-white text-title z-30 rounded-lg shadow-lg px-3 sm:px-10 pb-10 pt-5">
+                                            <div onMouseLeave={() => setActiveMenu(null)} className="absolute w-full top-full -mt-4 pt-4 left-0 right-0 z-[999] ">
+                                                <div className="container mx-auto bg-white text-title  rounded-lg shadow-lg px-3 sm:px-10 pb-10 pt-5">
                                                     {item.children?.map((group) => (
                                                         <div key={group.group}>
                                                             <h2 className="text-title text-lg font-semibold">{group.group}</h2>

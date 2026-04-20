@@ -1,27 +1,14 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+import BreadCrumb from '../BreadCrumb'
 
 const Banner = ({ data }: any) => {
     return (
         <section className='py-16 bg-background'>
             <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col gap-10'>
                 <div className='md:w-1/2 w-full'>
-                    <ul className='text-xs font-normal flex items-center gap-1'>
-                        <li>
-                            <Link href="/" className='text-primary'>
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            /
-                        </li>
-                        <li>
-                            <span className='text-desc'>
-                                {data.title}
-                            </span>
-                        </li>
-                    </ul>
+                    <BreadCrumb title={data.title} />
                     <h1 className='md:text-5xl text-4xl leading-tight font-semibold mt-8'>
                         {data.title}
                     </h1>

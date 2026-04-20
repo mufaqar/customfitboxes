@@ -17,7 +17,7 @@ export default function Products() {
             <section className='pt-5 pb-16'>
                 <div className='container mx-auto md:px-0 px-4 grid md:grid-cols-4 grid-cols-1 gap-5'>
                     {[1, 2, 3, 4].map((item, idx) => (
-                        <ProductBox key={idx} data={item} />
+                        <ProductBox key={idx} data={item} view='grid' />
                     ))}
                 </div>
             </section>
