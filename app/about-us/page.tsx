@@ -62,29 +62,6 @@ export default function AboutUs() {
                         At Custom Fit Boxes, we believe that the right packaging can make all the difference. Let us help you make that difference!
                     </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 </div>
             </div>
         </section >

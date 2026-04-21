@@ -65,12 +65,12 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/request-sample-pack" className='font-normal cursor-pointer text-title hover:underline'>
                                     Request Sample Pack
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/request-quote" className='font-normal cursor-pointer text-title hover:underline'>
                                     Get A Quote
                                 </Link>
                             </li>
@@ -158,7 +158,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/contact-us" className='font-normal cursor-pointer text-title hover:underline'>
                                     Contact Us
                                 </Link>
                             </li>
