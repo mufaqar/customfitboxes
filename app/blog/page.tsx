@@ -34,7 +34,7 @@ export default function BlogPage() {
             <Banner />
 
             <section className="py-16">
-                <div className="container mx-auto px-4 py-10">
+                <div className="container mx-auto md:px-0 px-4 py-10">
                     {/* Tabs */}
                     <div className="flex flex-wrap gap-3 mb-8">
                         {categories.map((cat) => (

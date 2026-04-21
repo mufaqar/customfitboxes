@@ -76,3 +76,19 @@ body {
 .scrollContent a {
   @apply text-primary hover:underline;
 }
+
+.blogSingle p {
+  @apply text-base font-normal text-desc mb-4;
+}
+
+.blogSingle a {
+  @apply text-primary underline;
+}
+
+.blogSingle h2 {
+  @apply text-2xl font-semibold text-primary mb-2 mt-4;
+}
+
+.blogSingle h3 {
+  @apply text-xl font-semibold text-primary mb-2 mt-4;
+}
