@@ -60,7 +60,7 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
+                                <Link href="/blog" className='font-normal cursor-pointer text-title hover:underline'>
                                     Blogs
                                 </Link>
                             </li>

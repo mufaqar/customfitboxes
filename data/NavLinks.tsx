@@ -89,7 +89,7 @@ export const Navlinks = [
 
     {
         label: "Contact Us",
-        href: "/contact",
+        href: "/contact-us",
         type: "link",
     },
 

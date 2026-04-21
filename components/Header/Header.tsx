@@ -172,11 +172,11 @@ const Header = () => {
                     </ul>
                 </nav>
                 <div className="hidden items-center gap-x-4 lg:flex lg:gap-x-4 md:pb-3">
-                    <Link href="#" className="text-xs text-center text-white bg-transparent border border-white rounded-md py-2 w-36 lg:w-40">
+                    <Link href="/request-sample-pack" className="text-xs text-center text-white bg-transparent border border-white rounded-md py-2 w-36 lg:w-40">
                         Request a Sample Pack
                     </Link>
-                    <Link href="#" className="text-xs text-center text-white bg-transparent border border-white rounded-md py-2 w-36 lg:w-40">
-                        Request a Sample Pack
+                    <Link href="/request-quote" className="text-xs text-center text-white bg-transparent border border-white rounded-md py-2 w-36 lg:w-40">
+                        Request a quote
                     </Link>
                 </div>
             </div>

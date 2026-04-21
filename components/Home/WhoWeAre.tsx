@@ -25,7 +25,7 @@ const WhoWeAre = () => {
                     <p className='mt-3'>
                         At Custom Fit Boxes, customer satisfaction is our top priority. We combine creativity, precision, and innovation to help businesses create a strong market presence. With our cost-effective and high-end packaging solutions, we ensure that your brand stands out and leaves a lasting impression.
                     </p>
-                    <Link href="#" className='text-base font-semibold text-white hover:text-primary border border-white hover:border-primary bg-primary hover:bg-transparent rounded-md px-4 whitespace-nowrap h-12 duration-300 inline-flex items-center justify-center gap-2.5 md:mt-14 mt-8'>
+                    <Link href="/about-us" className='text-base font-semibold text-white hover:text-primary border border-white hover:border-primary bg-primary hover:bg-transparent rounded-md px-4 whitespace-nowrap h-12 duration-300 inline-flex items-center justify-center gap-2.5 md:mt-14 mt-8'>
                         About Us <FaChevronRight className='border w-7 h-7 rounded-full p-1' />
                     </Link>
                 </div>
