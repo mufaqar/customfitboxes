@@ -1,17 +1,15 @@
-
-
 export const Navlinks = [
     {
         label: "Products",
         href: "/all-products",
-        type: "link",
+        type: "link" as const,
         icon: "/images/box.png",
     },
 
     {
         label: "Industries",
         href: "/industries",
-        type: "mega",
+        type: "mega" as const,
         icon: "/images/box.png",
         children: [
             {
@@ -69,7 +67,7 @@ export const Navlinks = [
     {
         label: "Box by Material",
         href: "/products",
-        type: "dropdown",
+        type: "dropdown" as const,
         children: [
             { label: "Corrugated", href: "/material/corrugated" },
             { label: "Kraft", href: "/material/kraft" },
@@ -80,7 +78,7 @@ export const Navlinks = [
     {
         label: "Shapes & Styles",
         href: "/products",
-        type: "dropdown",
+        type: "dropdown" as const,
         children: [
             { label: "Auto Lock", href: "/shapes/auto-lock" },
             { label: "Tuck End", href: "/shapes/tuck-end" },
@@ -90,48 +88,60 @@ export const Navlinks = [
     {
         label: "Contact Us",
         href: "/contact-us",
-        type: "link",
+        type: "link" as const,
     },
 
     {
         label: "Blog",
         href: "/blog",
-        type: "link",
+        type: "link" as const,
     },
 ];
 
+// Type Definitions
 export type NavLink = {
     type: "link";
     label: string;
-    href?: string;
+    href: string;  // Made required since all your links have href
     icon?: string;
+};
+
+export type DropdownItem = {
+    label: string;
+    href: string;
 };
 
 export type Dropdown = {
     type: "dropdown";
-    href?: string;
     label: string;
-    children: { label: string; href: string }[];
+    href?: string;  // Optional as dropdowns might not need a parent href
+    children: DropdownItem[];
     icon?: string;
+};
+
+export type MegaMenuItem = {
+    label: string;
+    href: string;
+    icon: string;  // Made required since all mega menu items have icons
+};
+
+export type MegaMenuGroup = {
+    group: string;
+    items: MegaMenuItem[];
+};
+
+export type MegaMenuFooter = {
+    label: string;
+    href: string;
 };
 
 export type MegaMenu = {
     type: "mega";
-    href?: string;
     label: string;
+    href?: string;  // Optional
     icon?: string;
-    children: {
-        group: string;
-        items: {
-            label: string;
-            href: string;
-            icon: string;
-        }[];
-    }[];
-    footer?: {
-        label: string;
-        href: string;
-    };
+    children: MegaMenuGroup[];
+    footer?: MegaMenuFooter;
 };
 
 export type NavigationItem = NavLink | Dropdown | MegaMenu;
