@@ -96,7 +96,9 @@ const Header = () => {
             className="flex md:flex-row gap-x-6 lg:gap-x-10 items-center justify-start"
           >
             <li className={`${isScrolled ? "md:block" : "hidden"} xl:border-r-2 xl:border-white -mt-1 xl:border-opacity-50 xl:pr-5`}>
-              <Image src="/images/home.svg" alt="home" width={22} height={22} />
+              <Link href="/">
+                <Image src="/images/home.svg" alt="home" width={22} height={22} />
+              </Link>
             </li>
             {links.map((item) => (
               <li key={item.label}>
