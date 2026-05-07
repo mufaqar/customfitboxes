@@ -4,7 +4,7 @@ export default function RequestSamplePack() {
     return (
         <section>
             {/* Banner */}
-            <div className='container mx-auto md:px-0 px-4 my-8'>
+            <div className='container mx-auto   my-8'>
                 <div className='pb-8 pt-5 md:py-10 lg:py-14 bg-background h-64 sm:h-80 md:h-96'>
                     <div className='md:w-1/2 w-full mx-auto px-4'>
                         <h1 className='text-2xl sm:text-3xl md:text-4xl text-center font-semibold text-primary'>

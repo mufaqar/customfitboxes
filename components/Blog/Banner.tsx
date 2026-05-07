@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa'
 const Banner = () => {
     return (
         <section className='pt-16 bg-background '>
-            <div className='max-w-[900px] mx-auto md:px-0 px-4 relative pb-16'>
+            <div className='max-w-[900px] mx-auto   relative pb-16'>
                 <h1 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl leading-tight font-semibold text-primary text-center'>
                     Behind the Box
                 </h1>

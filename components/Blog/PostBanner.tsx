@@ -4,7 +4,7 @@ import Link from 'next/link'
 const PostBanner = ({ data }: any) => {
     return (
         <section className='py-16 bg-background'>
-            <div className='container mx-auto md:px-0 px-4 flex flex-col md:flex-row items-center gap-2 md:gap-8'>
+            <div className='container mx-auto   flex flex-col md:flex-row items-center gap-2 md:gap-8'>
                 <div className='flex-1'>
                     <ul className='bg-primary p-2 text-white rounded-md text-[10px] flex gap-3 items-center w-fit'>
                         <li>

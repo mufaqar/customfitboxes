@@ -5,7 +5,7 @@ import IndustrySlider from './IndustrySlider'
 const CustomIndustry = () => {
     return (
         <section className='py-10'>
-            <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col md:gap-10 gap-8 items-center justify-between'>
+            <div className='container mx-auto   flex md:flex-row flex-col md:gap-10 gap-8 items-center justify-between'>
                 <div className='w-full'>
                     <h2 className='xl:text-5xl md:text-4xl sm:text-2xl text-3xl font-semibold leading-tight text-primary'>
                         Custom Boxes for Every Industry

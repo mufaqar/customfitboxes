@@ -8,7 +8,7 @@ const CatProducts = () => {
     const [view, setView] = useState<"grid" | "list">("grid");
     return (
         <section>
-            <div className='container mx-auto md:px-0 px-4 flex items-center justify-between mt-14 gap-y-5 gap-x-10 flex-wrap'>
+            <div className='container mx-auto   flex items-center justify-between mt-14 gap-y-5 gap-x-10 flex-wrap'>
                 <div>
                     <form className='bg-[#f5f5f5] h-12 w-80 items-center gap-x-3 rounded-md px-3 flex'>
                         <button className="text-title/50">
@@ -21,7 +21,7 @@ const CatProducts = () => {
                 </div>
                 <ViewToggle view={view} setView={setView} />
             </div>
-            <div className={`container mx-auto md:px-0 px-4 mt-10 ${view === "grid"
+            <div className={`container mx-auto   mt-10 ${view === "grid"
                 ? "grid md:grid-cols-4 grid-cols-1 gap-5"
                 : "flex flex-col gap-5"
                 }`}

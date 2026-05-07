@@ -30,17 +30,17 @@ const FinishingOptions = () => {
         ]
     }
     return (
-        <section className='py-16'>
-            <div className='container mx-auto md:px-0 px-4'>
+        <section className='pt-16 pb-10'>
+            <div className='container mx-auto  '>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl text-primary text-center font-semibold leading-tight'>
                     Luxury Finishing Options
                 </h2>
                 <p className='text-base leading-5 text-center mt-1'>
-                    Elevate your packaging with stunning premium finishes that enhance appeal and sophistication. From gold and silver foils to holographic effects,
+                    Elevate your packaging with stunning premium finishes that enhance appeal and sophistication. From gold and silver foils to holographic effects,<br className='hidden sm:block'/>
                     our high-quality finishing options ensure a luxurious, eye-catching presentation that leaves a lasting impression.
                 </p>
             </div>
-            <div className='container mx-auto md:px-0 px-4 mt-10 relative'>
+            <div className='container mx-auto   mt-10 relative'>
                 <Slider ref={sliderRef} {...settings}>
                     {[1, 2, 3, 4, 5].map((item, idx) => (
                         <div key={idx} className='px-3'>
@@ -52,7 +52,7 @@ const FinishingOptions = () => {
                     ))}
                 </Slider>
                 {/* Custom Buttons */}
-                <div className='flex items-center justify-center gap-10 mt-10'>
+                <div className='flex items-center justify-center gap-10 '>
                     <button onClick={goPrev} className="text-white text-2xl flex items-center justify-center w-[42px] h-[43px] absolute top-1/2 -translate-y-1/2 left-6 bg-black/50 rounded-full scale-100 hover:scale-110 transition-all duration-100">
                         <FaChevronLeft />
                     </button>

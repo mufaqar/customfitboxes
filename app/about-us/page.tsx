@@ -11,7 +11,7 @@ export default function AboutUs() {
             </div>
 
             {/* textarea */}
-            <div className='container mx-auto md:px-0 px-4'>
+            <div className='container mx-auto  '>
                 <div className='pb-8 pt-5 md:py-10 lg:py-14'>
                     <h2 className='text-xl font-semibold mt-4'>Who We Are</h2>
                     <p className='py-4'>

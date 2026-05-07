@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
       </div>
 
       {/* textarea */}
-      <div className='container mx-auto md:px-0 px-4'>
+      <div className='container mx-auto  '>
         <div className='pb-8 pt-5 md:py-10 lg:py-14'>
           <p className='py-4'>
             At Custom Fit Boxes, we are committed to safeguarding your privacy. This Privacy Policy outlines how we collect, use, disclose, and protect your personal information when you interact with our website and services..

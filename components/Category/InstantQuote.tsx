@@ -3,7 +3,7 @@ import Image from 'next/image'
 const InstantQuote = () => {
     return (
         <section className='py-16'>
-            <div className='container mx-auto md:px-0 px-4 grid md:grid-cols-2 grid-cols-1 gap-10'>
+            <div className='container mx-auto   grid md:grid-cols-2 grid-cols-1 gap-10'>
                 <div className='bg-[#f5f5f5] p-4 overflow-hidden hidden md:flex items-center rounded-2xl justify-center'>
                     <Image src="/images/instant.png" alt='instant' width={450} height={450} className='h-full w-full' />
                 </div>

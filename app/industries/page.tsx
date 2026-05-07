@@ -6,7 +6,7 @@ export default function Industries() {
     return (
         <main>
             <section className='py-16'>
-                <div className='container mx-auto md:px-0 px-4'>
+                <div className='container mx-auto  '>
                     <h1 className='text-3xl sm:text-2xl md:text-4xl text-title text-center font-semibold leading-tight'>
                         All Industries
                     </h1>
@@ -17,7 +17,7 @@ export default function Industries() {
                 </div>
             </section>
             <section className='pt-5 pb-16'>
-                <div className='container mx-auto md:px-0 px-4 grid lg:grid-cols-5 md:grid-cols-4 grid-cols-1 gap-5'>
+                <div className='container mx-auto   grid lg:grid-cols-5 md:grid-cols-4 grid-cols-1 gap-5'>
                     {[1, 2, 3, 4, 5].map((item, idx) => (
                         <div key={idx}>
                             <div className='flex flex-col items-center justify-center gap-x-3 cursor-pointer group rounded-lg shadow-md hover:shadow-lg px-3 h-40 border border-black/5'>

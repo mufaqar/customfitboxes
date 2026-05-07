@@ -13,7 +13,7 @@ export default function WhyUs() {
             </div>
 
             {/* textarea */}
-            <div className='container mx-auto md:px-0 px-4'>
+            <div className='container mx-auto  '>
                 <div className='pb-8 pt-5 md:py-10 lg:py-14'>
 
                     <h2 className='text-xl font-semibold mt-4'>What Is a Terms of Service Agreement?</h2>

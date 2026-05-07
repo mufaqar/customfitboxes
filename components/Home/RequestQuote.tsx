@@ -2,7 +2,7 @@
 const RequestQuote = () => {
     return (
         <section className='py-16 bg-background'>
-            <div className='container mx-auto md:px-0 px-4'>
+            <div className='container mx-auto  '>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl text-primary text-center font-semibold leading-tight'>
                     Request a Quote
                 </h2>
@@ -11,7 +11,7 @@ const RequestQuote = () => {
                     a fast, competitive estimate. Let’s create something amazing!
                 </p>
             </div>
-            <div className='container mx-auto md:px-0 px-4 mt-10'>
+            <div className='container mx-auto   mt-10'>
                 <div className='border border-black/50 rounded-xl px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto'>
                     <form className='grid md:grid-cols-2 grid-cols-1 gap-6 md:gap-4 sm:p-3'>
                         <div className='flex flex-row gap-6 md:gap-4'>

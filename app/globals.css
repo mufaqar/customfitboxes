@@ -54,6 +54,26 @@ body {
   /* darker on hover */
 }
 
+.container {
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
 .scrollContent h2 {
   @apply text-xl font-semibold text-primary mb-4;
 }

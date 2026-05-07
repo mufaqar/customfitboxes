@@ -5,7 +5,7 @@ import React from 'react'
 const CTA = () => {
     return (
         <section className='pt-10 bg-background'>
-            <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col gap-10 items-center'>
+            <div className='container mx-auto   flex md:flex-row flex-col gap-10 items-center'>
                 <div className='md:w-1/2 w-full'>
                     <Image src="/images/banner2.png" alt='banner2' width={827} height={697} className='w-full h-full' />
                 </div>

@@ -36,13 +36,13 @@ const Faqs = () => {
     }
 
     return (
-        <section className='py-16'>
-            <div className='container mx-auto md:px-0 px-4'>
+        <section className='py-10'>
+            <div className='container mx-auto  '>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl text-primary text-center font-semibold leading-tight'>
                     Frequently Asked Question
                 </h2>
                 <p className='text-base leading-5 text-center mt-1'>
-                    Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more.
+                    Have questions about our packaging solutions? Find answers to the most common queries about our custom boxes, materials, printing options, and more. <br className='hidden xl:block' />
                     Still If you have any questions, let us know!
                 </p>
             </div>

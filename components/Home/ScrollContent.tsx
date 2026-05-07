@@ -4,7 +4,7 @@ import Link from 'next/link'
 const ScrollContent = () => {
     return (
         <section className='py-16'>
-            <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col-reverse gap-10 items-center'>
+            <div className='container mx-auto   flex md:flex-row flex-col-reverse gap-10 items-center'>
                 <div className='md:w-2/3 w-full'>
                     <div className='scrollDiv overflow-y-auto pl-3 md:pl-5 h-[480px]'>
                         <div className='scrollContent'>

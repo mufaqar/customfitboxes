@@ -3,7 +3,7 @@ import React from 'react'
 const HeadingSection = () => {
     return (
         <section>
-            <div className='container mx-auto md:px-0 px-4'>
+            <div className='container mx-auto  '>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl leading-tight font-semibold text-primary text-center'>
                     Corrugated Boxes Heading
                 </h2>

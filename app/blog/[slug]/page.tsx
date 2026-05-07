@@ -80,7 +80,7 @@ export default async function BlogDetail({ params }: any) {
         </div>
       </section>
       <section className="pb-16">
-        <div className="container mx-auto md:px-0 px-4">
+        <div className="container mx-auto  ">
           <h3 className='md:text-2xl text-xl font-semibold text-primary'>
             Related Posts:
           </h3>

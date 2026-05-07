@@ -22,7 +22,7 @@ const IndustrySlider = () => {
         speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
-        autoplay: true,
+        autoplay: false,
         arrows: false, // IMPORTANT: disable default arrows
         responsive: [
             { breakpoint: 1024, settings: { slidesToShow: 3 } },
@@ -31,7 +31,7 @@ const IndustrySlider = () => {
         ]
     }
     return (
-        <div className='container mx-auto md:px-0 px-4 mt-14'>
+        <div className='container mx-auto mt-14'>
             <div className=''>
                 <Slider ref={sliderRef} {...settings}>
                     {[1, 2, 3, 4, 5].map((item) => (

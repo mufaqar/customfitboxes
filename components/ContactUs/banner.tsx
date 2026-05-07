@@ -8,7 +8,7 @@ export default function  Banner() {
   return (
     <section>
                <div className='pb-8 pt-5 md:py-10 lg:py-14 bg-background'>
-                   <div className='container mx-auto md:px-0 px-4'>
+                   <div className='container mx-auto  '>
                        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center'>
    
                            {/* Left - Image */}

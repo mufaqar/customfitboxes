@@ -32,8 +32,8 @@ const TestimonialSlider = () => {
         ]
     }
     return (
-        <section className='py-16'>
-            <div className='container mx-auto md:px-0 px-4'>
+        <section className='py-10'>
+            <div className='container mx-auto'>
                 <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl text-primary text-center font-semibold leading-tight'>
                     Testmonials
                 </h2>
@@ -41,11 +41,11 @@ const TestimonialSlider = () => {
                     See Why Customers Love Company Name
                 </h3>
                 <p className='text-base leading-5 text-center mt-3'>
-                    We're dedicated to creating remarkable and distinctive custom packaging boxes that make a great first impression. Our loyal customer base knows
+                    We're dedicated to creating remarkable and distinctive custom packaging boxes that make a great first impression. Our loyal customer base knows<br className='hidden xl:block' />
                     we mean it when we say customer satisfaction guaranteed. But don't just take our word for it...see what our customers have to say.
                 </p>
             </div>
-            <div className='container mx-auto md:px-0 px-4 mt-10'>
+            <div className='container mx-auto   mt-10'>
                 <div className=''>
                     <Slider ref={sliderRef} {...settings}>
                         {[1, 2, 3, 4, 5].map((item, idx) => (

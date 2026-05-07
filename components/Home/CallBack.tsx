@@ -4,7 +4,7 @@ import { FaChevronRight } from 'react-icons/fa'
 const CallBack = () => {
     return (
         <section className='py-16 bg-background'>
-            <div className='container mx-auto md:px-0 px-4 flex md:flex-row flex-col md:gap-10 gap-8 items-center justify-between'>
+            <div className='container mx-auto   flex md:flex-row flex-col md:gap-10 gap-8 items-center justify-between'>
                 <div className='md:w-1/2 w-full'>
                     <Image src="/images/callback.svg" alt='callback' width={625} height={365} />
                 </div>

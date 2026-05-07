@@ -4,7 +4,7 @@ import ProductGallery from './ProductGallery'
 const ProBanner = ({ data }: any) => {
     return (
         <section className='py-10'>
-            <div className='container mx-auto md:px-0 px-4 grid md:grid-cols-2 grid-cols-1 gap-10'>
+            <div className='container mx-auto   grid md:grid-cols-2 grid-cols-1 gap-10'>
                 <ProductGallery />
                 <div>
                     <BreadCrumb title={data.name} />

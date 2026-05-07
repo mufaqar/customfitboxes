@@ -3,7 +3,7 @@ import Image from "next/image"
 const Feature = () => {
     return (
         <section className='py-16'>
-            <div className="container mx-auto md:px-0 px-4">
+            <div className="container mx-auto  ">
                 <h3 className="lg:text-4xl text-3xl leading-tight font-semibold text-center text-primary">
                     Product Features
                 </h3>
