@@ -1,30 +1,64 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-const PostBox = ({ data }: any) => {
-    return (
-        <div className='bg-[#f5f5f5] h-full flex flex-col rounded'>
-            <Image src={`${data.img}`}
-                alt="feature"
-                width={385}
-                height={320}
-                className='object-cover object-center w-full h-full rounded-t' />
-            <div className='pt-3 md:pb-8 px-2 sm:px-4'>
-                <Link href={`/blog/${data?.slug}`} className='text-sm sm:text-lg xl:text-xl font-semibold text-primary text-center md:text-left  mt-3'>
-                    {data?.title}
-                </Link>
-                <div className='flex items-center gap-2 my-5'>
-                    <Image src="/images/author.svg" alt='author' width={32} height={32} className='h-8 w-8 rounded-full object-cover' />
-                    <p className='text-[10px] sm:text-xs'>
-                        Amanda Jane Rivera, Last Updated: May 07, 2024
-                    </p>
-                </div>
-                <p className='text-sm xl:text-base line-clamp-4'>
-                    {data?.excerpt}
-                </p>
-            </div>
+type PostBoxProps = {
+  data: {
+    _id: string;
+    title: string;
+    slug: string;
+    excerpt: string;
+    mainImage?: string;
+    publishedAt?: string;
+    author?: {
+      name: string;
+      image?: string;
+    };
+    category?: string;
+  };
+};
+
+export default function PostBox({ data }: PostBoxProps) {
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+      {data.mainImage && (
+        <Image
+          src={data.mainImage}
+          alt={data.title}
+          width={400}
+          height={250}
+          className="object-cover w-full h-48"
+        />
+      )}
+      <div className="p-4">
+        {data.category && (
+          <span className="text-xs text-primary bg-primary/10 px-2 py-1 rounded">
+            {data.category}
+          </span>
+        )}
+        <Link href={`/blog/${data.slug}`}>
+          <h3 className="text-xl font-semibold mt-2 hover:text-primary transition">
+            {data.title}
+          </h3>
+        </Link>
+        <div className="flex items-center gap-2 mt-3">
+          {data.author?.image && (
+            <Image
+              src={data.author.image}
+              alt={data.author.name}
+              width={24}
+              height={24}
+              className="h-6 w-6 rounded-full object-cover"
+            />
+          )}
+          <p className="text-xs text-gray-500">
+            {data.author?.name || "Anonymous"} •{" "}
+            {data.publishedAt
+              ? new Date(data.publishedAt).toLocaleDateString()
+              : "Recent"}
+          </p>
         </div>
-    )
+        <p className="text-sm text-gray-600 mt-2 line-clamp-3">{data.excerpt}</p>
+      </div>
+    </div>
+  );
 }
-
-export default PostBox
