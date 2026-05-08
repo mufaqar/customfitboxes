@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
-import { FaPlus, FaMinus } from 'react-icons/fa6'
 
 const faqsData = [
     {
@@ -34,7 +33,46 @@ const Faqs = () => {
     const toggleFAQ = (index: number) => {
         setActiveIndex(activeIndex === index ? null : index)
     }
+    const [question, setQuestion] = useState("")
+    const [loading, setLoading] = useState(false)
 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        if (!question.trim()) {
+            alert("Please enter your question")
+            return
+        }
+
+        setLoading(true)
+
+        try {
+            const res = await fetch("/api/ask-question", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    question,
+                }),
+            })
+
+            const data = await res.json()
+
+            if (data.success) {
+                alert("Question sent successfully")
+                setQuestion("")
+            } else {
+                alert(data.message)
+            }
+
+        } catch (error) {
+            console.log(error)
+            alert("Something went wrong")
+        } finally {
+            setLoading(false)
+        }
+    }
     return (
         <section className='py-10'>
             <div className='container mx-auto  '>
@@ -78,14 +116,15 @@ const Faqs = () => {
                 </div>
                 <div className="md:w-1/2 w-full">
                     <Image src="/images/faq.png" alt='faq' width={616} height={601} />
-                    <form className='border border-primary rounded-md flex items-center gap-3 p-2 mt-5'>
+                    <form onSubmit={handleSubmit}
+                     className='border border-primary rounded-md flex items-center gap-3 p-2 mt-5'>
                         <input
                             type='text'
                             name='askQuestion'
                             placeholder='What else would you like to know?'
                             className='bg-transparent p-0 outline-none border-none w-full text-sm sm:text-base px-3' />
                         <button type='submit' className='bg-primary text-white w-24 py-2 sm:text-base text-sm rounded-md'>
-                            Send
+                            {loading ? "Sending..." : "Send"}
                         </button>
                     </form>
                 </div>

@@ -1,5 +1,38 @@
+"use client"
+import { useState } from "react"
 
 const RequestQuote = () => {
+
+    const [loading, setLoading] = useState(false)
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+
+        setLoading(true)
+
+        const formData = new FormData(e.currentTarget)
+
+        try {
+            const res = await fetch("/api/request-quote", {
+                method: "POST",
+                body: formData,
+            })
+
+            const data = await res.json()
+
+            if (data.success) {
+                alert("Quote request submitted successfully")
+                e.currentTarget.reset()
+            } else {
+                alert(data.message)
+            }
+        } catch (error) {
+            console.log(error)
+            alert("Something went wrong")
+        } finally {
+            setLoading(false)
+        }
+    }
     return (
         <section className='py-16 bg-background'>
             <div className='container mx-auto  '>
@@ -13,7 +46,8 @@ const RequestQuote = () => {
             </div>
             <div className='container mx-auto   mt-10'>
                 <div className='border border-black/50 rounded-xl px-4 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-16 relative w-full lg:w-11/12 mx-auto'>
-                    <form className='grid md:grid-cols-2 grid-cols-1 gap-6 md:gap-4 sm:p-3'>
+                    <form onSubmit={handleSubmit}
+                        className='grid md:grid-cols-2 grid-cols-1 gap-6 md:gap-4 sm:p-3'>
                         <div className='flex flex-row gap-6 md:gap-4'>
                             <input
                                 type='number'
@@ -47,7 +81,7 @@ const RequestQuote = () => {
                                 className="h-10 w-full border-b border-black/50 bg-transparent text-sm sm:text-base text-title placeholder:text-title outline-none">
                                 <option>Scissors Boxes</option>
                                 <option> 5ml Bottle Boxes</option>
-                                <option>Swirl Jewelry Boxes</option>
+                                <option>Swirl Jewelry Boxes</option> 
                                 <option>Pet Food Serving Boxes</option>
                             </select>
                         </div>
