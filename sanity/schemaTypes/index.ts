@@ -1,9 +1,7 @@
-import { type SchemaTypeDefinition } from 'sanity'
-import { blogs } from './blogs'
+import blogs from './blogs'
+import categories from './categories'
+import faqs from './faqs'
+import products from './products'
+import testimonials from './testimonials'
 
-export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [
-
-     blogs,
-  ],
-}
+export const schemaTypes = [categories, products, faqs, testimonials, blogs]

@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/sanity/lib/live";
-import { ALL_BLOGS_QUERY, BLOG_CATEGORIES_QUERY } from "@/sanity/queries";
+import { ALL_BLOGS_QUERY } from "@/sanity/queries";
 import Banner from "@/components/Blog/Banner";
 import BlogContent from "@/components/Blog/BlogContent";
 
@@ -9,11 +9,10 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
-  // Fetch blogs and categories in parallel
-  const [{ data: blogs }, { data: categoriesData }] = await Promise.all([
-    sanityFetch({ query: ALL_BLOGS_QUERY, perspective: "published" }),
-    sanityFetch({ query: BLOG_CATEGORIES_QUERY, perspective: "published" }),
-  ]);
+  const { data: blogs } = await sanityFetch({
+    query: ALL_BLOGS_QUERY,
+    perspective: "published",
+  }) as { data: any };
 
   // Extract unique categories with counts
   const categoryMap = new Map();

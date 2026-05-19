@@ -1,3 +1,5 @@
+import { sanityFetch } from "@/sanity/lib/live";
+import { ALL_TESTIMONIALS_QUERY, ALL_FAQS_QUERY } from "@/sanity/queries";
 import Banner from "@/components/Home/Banner";
 import CallBack from "@/components/Home/CallBack";
 import CustomIndustry from "@/components/Home/CustomIndustry";
@@ -9,7 +11,12 @@ import ScrollContent from "@/components/Home/ScrollContent";
 import TestimonialSlider from "@/components/Home/TestimonialSlider";
 import WhoWeAre from "@/components/Home/WhoWeAre";
 
-export default function Home() {
+export default async function Home() {
+  const [{ data: testimonials }, { data: faqs }] = await Promise.all([
+    sanityFetch({ query: ALL_TESTIMONIALS_QUERY, perspective: "published" }),
+    sanityFetch({ query: ALL_FAQS_QUERY, perspective: "published" }),
+  ]) as { data: any }[];
+
   return (
     <main>
       <Banner />
@@ -19,8 +26,8 @@ export default function Home() {
       <WhoWeAre />
       <RequestQuote />
       <ScrollContent />
-      <Faqs />
-      <TestimonialSlider />
+      <Faqs faqs={faqs || null} />
+      <TestimonialSlider testimonials={testimonials || []} />
       <CallBack />
     </main>
   );

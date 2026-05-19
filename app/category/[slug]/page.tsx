@@ -1,3 +1,5 @@
+import { sanityFetch } from "@/sanity/lib/live";
+import { CATEGORY_BY_SLUG_QUERY } from "@/sanity/queries";
 import Banner from "@/components/Category/Banner";
 import CatProducts from "@/components/Category/CatProducts";
 import HeadingSection from "@/components/Category/HeadingSection";
@@ -6,26 +8,25 @@ import Faqs from "@/components/Home/Faqs";
 import ScrollContent from "@/components/Home/ScrollContent";
 import { notFound } from "next/navigation";
 
-const categories = [
-    { slug: "corrugated-boxes", title: "Corrugated Boxes" },
-    { slug: "fashion", title: "Fashion" },
-];
-
 export default async function CategoryPage({ params }: any) {
-    const { slug } = await params; // ✅ FIX HERE
+  const { slug } = await params;
 
-    const category = categories.find((cat) => cat.slug === slug);
+  const { data: category } = await sanityFetch({
+    query: CATEGORY_BY_SLUG_QUERY,
+    params: { slug },
+    perspective: "published",
+  }) as { data: any };
 
-    if (!category) return notFound();
+  if (!category) return notFound();
 
-    return (
-        <main>
-            <Banner data={category} />
-            <InstantQuote />
-            <HeadingSection />
-            <CatProducts />
-            <ScrollContent />
-            <Faqs />
-        </main>
-    );
+  return (
+    <main>
+      <Banner data={category} />
+      <InstantQuote />
+      <HeadingSection data={category} />
+      <CatProducts products={category.products || []} />
+      <ScrollContent content={category.content} />
+      <Faqs faqs={category.faqs || null} />
+    </main>
+  );
 }
