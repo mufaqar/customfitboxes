@@ -8,7 +8,6 @@ const Faqs = ({ faqs }: { faqs?: any[] | null }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null)
   const [question, setQuestion] = useState("")
   const [loading, setLoading] = useState(false)
-
   const faqsData = faqs && faqs.length > 0 ? faqs : [
     {
       question: 'What materials are used in your packaging?',
@@ -77,7 +76,7 @@ const Faqs = ({ faqs }: { faqs?: any[] | null }) => {
       </div>
       <div className="container mx-auto px-4 md:px-0 mt-10 flex md:flex-row flex-col gap-10">
         <div className="md:w-1/2 w-full">
-          {faqsData.map((faq: any, index: number) => (
+          {faqsData.slice(0, 10).map((faq: any, index: number) => (
             <div key={index} className={`overflow-hidden border-b border-black/50 shadow-md`}>
               <button
                 onClick={() => toggleFAQ(index)}

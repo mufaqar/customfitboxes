@@ -21,7 +21,7 @@ const CategoryBox = ({ data }: any) => {
           <Link href={`/category/${slug}`} className='text-lg md:text-base lg:text-lg font-semibold text-center text-primary flex w-full justify-center items-center'>
             {name}
           </Link>
-          <p className='text-sm text-center'>{description}</p>
+          <p className='text-sm text-center line-clamp-3'>{description}</p>
         </div>
       </div>
     </div>

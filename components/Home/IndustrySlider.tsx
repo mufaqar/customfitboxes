@@ -5,7 +5,7 @@ import Slider from 'react-slick'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import CategoryBox from '../Category/CategoryBox'
 
-const IndustrySlider = () => {
+const IndustrySlider = ({ cat }: any) => {
     const sliderRef = useRef<any>(null)
 
     const goNext = () => {
@@ -34,8 +34,8 @@ const IndustrySlider = () => {
         <div className='container mx-auto mt-14'>
             <div className=''>
                 <Slider ref={sliderRef} {...settings}>
-                    {[1, 2, 3, 4, 5].map((item) => (
-                        <CategoryBox key={item} data={item} />
+                    {cat.map((item: any, idx: number) => (
+                        <CategoryBox key={idx} data={item} />
                     ))}
                 </Slider>
                 {/* Custom Buttons */}

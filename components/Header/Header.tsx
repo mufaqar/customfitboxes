@@ -28,7 +28,7 @@ const Header = () => {
     };
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 150);
     };
 
     document.addEventListener("mousedown", handler);

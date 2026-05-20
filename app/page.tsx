@@ -1,5 +1,5 @@
 import { sanityFetch } from "@/sanity/lib/live";
-import { ALL_TESTIMONIALS_QUERY, ALL_FAQS_QUERY } from "@/sanity/queries";
+import { ALL_TESTIMONIALS_QUERY, ALL_FAQS_QUERY, ALL_CATEGORIES_QUERY } from "@/sanity/queries";
 import Banner from "@/components/Home/Banner";
 import CallBack from "@/components/Home/CallBack";
 import CustomIndustry from "@/components/Home/CustomIndustry";
@@ -12,15 +12,16 @@ import TestimonialSlider from "@/components/Home/TestimonialSlider";
 import WhoWeAre from "@/components/Home/WhoWeAre";
 
 export default async function Home() {
-  const [{ data: testimonials }, { data: faqs }] = await Promise.all([
+  const [{ data: testimonials }, { data: faqs },{ data: categories }] = await Promise.all([
     sanityFetch({ query: ALL_TESTIMONIALS_QUERY, perspective: "published" }),
     sanityFetch({ query: ALL_FAQS_QUERY, perspective: "published" }),
+    sanityFetch({ query: ALL_CATEGORIES_QUERY, perspective: "published" }),
   ]) as { data: any }[];
 
   return (
     <main>
       <Banner />
-      <CustomIndustry />
+      <CustomIndustry categories={categories || null}  />
       <PackagingProcess />
       <FinishingOptions />
       <WhoWeAre />

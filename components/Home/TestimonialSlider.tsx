@@ -42,41 +42,24 @@ const TestimonialSlider = ({ testimonials }: { testimonials: any[] }) => {
       <div className='container mx-auto mt-10'>
         <div>
           <Slider ref={sliderRef} {...settings}>
-            {testimonials && testimonials.length > 0 ? (
-              testimonials.map((item: any, idx: number) => (
-                <div key={item._id || idx} className='px-2 sm:px-3 pt-10'>
-                  <div className='rounded-xl px-5 py-5 relative h-72 bg-[#f5f5f5]'>
-                    {item.userImage ? (
-                      <Image src={item.userImage} alt={item.reviewerName || 'Reviewer'} width={50} height={50} className='h-20 w-20 rounded-full object-cover absolute -top-8 transform -translate-x-1/2 left-1/2' />
-                    ) : (
-                      <Image src="/images/author.svg" alt='author' width={50} height={50} className='h-20 w-20 rounded-full object-cover absolute -top-8 transform -translate-x-1/2 left-1/2' />
-                    )}
-                    <div className='pt-14 flex flex-col gap-10'>
-                      <div>
-                        <h3 className='text-xs text-center font-semibold mb-2'>{item.reviewerName}</h3>
-                        <p className='text-xs text-center'>{item.review}</p>
-                      </div>
-                      <h3 className='text-lg font-semibold text-primary text-center'>{item.reviewerName}</h3>
-                    </div>
-                  </div>
-                </div>
-              ))
-            ) : (
-              [1, 2, 3].map((_, idx) => (
-                <div key={idx} className='px-2 sm:px-3 pt-10'>
-                  <div className='rounded-xl px-5 py-5 relative h-72 bg-[#f5f5f5]'>
+            {testimonials.map((item: any, idx: number) => (
+              <div key={item._id || idx} className='px-2 sm:px-3 pt-10'>
+                <div className='rounded-xl px-5 py-5 relative h-72 bg-[#f5f5f5]'>
+                  {item.userImage ? (
+                    <Image src={item.userImage} alt={item.reviewerName || 'Reviewer'} width={50} height={50} className='h-20 w-20 rounded-full object-cover absolute -top-8 transform -translate-x-1/2 left-1/2' />
+                  ) : (
                     <Image src="/images/author.svg" alt='author' width={50} height={50} className='h-20 w-20 rounded-full object-cover absolute -top-8 transform -translate-x-1/2 left-1/2' />
-                    <div className='pt-14 flex flex-col gap-10'>
-                      <div>
-                        <h3 className='text-xs text-center font-semibold mb-2'>Customer</h3>
-                        <p className='text-xs text-center'>Great service and quality products!</p>
-                      </div>
-                      <h3 className='text-lg font-semibold text-primary text-center'>Customer</h3>
+                  )}
+                  <div className='pt-14 flex flex-col gap-10'>
+                    <div>
+                      <h3 className='text-xs text-center font-semibold mb-2'>{item.reviewerName}</h3>
+                      <p className='text-xs text-center'>{item.review}</p>
                     </div>
+                    <h3 className='text-lg font-semibold text-primary text-center'>{item.reviewerName}</h3>
                   </div>
                 </div>
-              ))
-            )}
+              </div>
+            ))}
           </Slider>
           <div className='flex items-center justify-center gap-10 mt-10'>
             <button onClick={goPrev} className="text-primary text-2xl flex items-center justify-center scale-100 hover:scale-110 transition-all duration-100">

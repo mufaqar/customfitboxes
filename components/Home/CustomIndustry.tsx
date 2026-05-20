@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import IndustrySlider from './IndustrySlider'
 
-const CustomIndustry = () => {
+const CustomIndustry = ({categories} : any) => {
     return (
         <section className='py-10'>
             <div className='container mx-auto   flex md:flex-row flex-col md:gap-10 gap-8 items-center justify-between'>
@@ -21,7 +21,7 @@ const CustomIndustry = () => {
                     </Link>
                 </div>
             </div>
-            <IndustrySlider />
+            <IndustrySlider cat={categories}  />
         </section>
     )
 }

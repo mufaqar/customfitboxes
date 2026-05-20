@@ -1,8 +1,13 @@
+import { sanityFetch } from '@/sanity/lib/live';
+import { ALL_CATEGORIES_QUERY } from '@/sanity/queries';
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
 
-export default function Industries() {
+export default async function Industries() {
+    const [{ data: categories }] = await Promise.all([
+        sanityFetch({ query: ALL_CATEGORIES_QUERY, perspective: "published" }),
+    ]) as { data: any }[];
+
     return (
         <main>
             <section className='py-16'>
@@ -18,12 +23,12 @@ export default function Industries() {
             </section>
             <section className='pt-5 pb-16'>
                 <div className='container mx-auto   grid lg:grid-cols-5 md:grid-cols-4 grid-cols-1 gap-5'>
-                    {[1, 2, 3, 4, 5].map((item, idx) => (
+                    {categories.map((item: any, idx: number) => (
                         <div key={idx}>
                             <div className='flex flex-col items-center justify-center gap-x-3 cursor-pointer group rounded-lg shadow-md hover:shadow-lg px-3 h-40 border border-black/5'>
-                                <Image src="/images/box.png" alt='feature' width={60} height={60} className='w-auto h-auto mx-auto' />
-                                <Link href="#" className='text-sm md:text-base font-normal text-center group-hover:font-bold'>
-                                    Corrugated Boxes
+                                <Image src={item?.image} alt={item?.imageAlt} width={60} height={60} className='w-auto h-auto mx-auto' />
+                                <Link href={`/category/${item?.slug}`} className='text-sm md:text-base font-normal text-center group-hover:font-bold'>
+                                    {item?.name}
                                 </Link>
                             </div>
                         </div>
