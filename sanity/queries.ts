@@ -130,7 +130,13 @@ export const ALL_CATEGORIES_QUERY = defineQuery(`
     description,
     featured,
     "image": imageWithAlt.image.asset->url,
-    "imageAlt": imageWithAlt.alt
+    "imageAlt": imageWithAlt.alt,
+    "iconWithAlt": {
+      "icon": iconWithAlt.icon.asset->url,
+      alt,
+      caption,
+      description
+    },
   }
 `)
 

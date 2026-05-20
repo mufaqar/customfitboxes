@@ -28,7 +28,10 @@ const Header = () => {
     };
 
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 150);
+      setIsScrolled((prev) => {
+        if (prev) return window.scrollY > 80;
+        return window.scrollY > 200;
+      });
     };
 
     document.addEventListener("mousedown", handler);
@@ -41,8 +44,8 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`${isScrolled ? "py-0 " : "py-2"} bg-primary sticky top-0 z-[9999] `}>
-      <div className={`${isScrolled ? "md:hidden " : "flex"} container mx-auto flex items-center justify-between relative`}>
+    <header className={`${isScrolled ? "py-0 " : "py-2"} bg-primary sticky top-0 z-[9999] transition-all duration-500 ease-in-out`}>
+      <div className={`${isScrolled ? "md:opacity-0 md:invisible md:max-h-0 md:overflow-hidden " : "md:opacity-100 md:visible md:max-h-40 "} container mx-auto flex items-center justify-between relative transition-all duration-500 ease-in-out`}>
         <div>
           <Link href="/" className="inline-flex">
             <Image
@@ -95,7 +98,7 @@ const Header = () => {
             ref={navRef}
             className="flex md:flex-row gap-x-6 lg:gap-x-10 items-center justify-start"
           >
-            <li className={`${isScrolled ? "md:block" : "hidden"} xl:border-r-2 xl:border-white -mt-1 xl:border-opacity-50 xl:pr-5`}>
+            <li className={`${isScrolled ? "md:opacity-100 md:visible md:relative md:block" : "md:opacity-0 md:invisible md:absolute"} xl:border-r-2 xl:border-white -mt-1 xl:border-opacity-50 xl:pr-5 transition-all duration-500 ease-in-out`}>
               <Link href="/">
                 <Image src="/images/home.svg" alt="home" width={22} height={22} />
               </Link>
@@ -209,7 +212,7 @@ const Header = () => {
                 )}
               </li>
             ))}
-            <li className={`${isScrolled ? "md:block" : "hidden"} `}>
+            <li className={`${isScrolled ? "md:opacity-100 md:visible md:relative md:block" : "md:opacity-0 md:invisible md:absolute"} transition-all duration-500 ease-in-out`}>
               <button onClick={() => setSearchPopUp(!searchPopUp)}>
                 <IoSearch size={24} className="text-white" />
               </button>
@@ -231,7 +234,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <div className={`${searchPopUp === true && isScrolled ? "md:absolute top-full right-10 md:mt-4 md:block" : "md:hidden"}  w-80 xl:w-96 md:px-0 px-4`}>
+      <div className={`${searchPopUp === true && isScrolled ? "md:absolute top-full right-10 md:mt-4 md:opacity-100 md:visible" : "md:opacity-0 md:invisible md:absolute"} transition-all duration-500 ease-in-out w-80 xl:w-96 md:px-0 px-4`}>
         <SearchForm />
       </div>
     </header>
