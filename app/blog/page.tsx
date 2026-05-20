@@ -4,7 +4,7 @@ import Banner from "@/components/Blog/Banner";
 import BlogContent from "@/components/Blog/BlogContent";
 
 export const metadata = {
-  title: "Behind the Box | CustomFitBox Blog",
+  title: "Behind the Box | CustomFitBox Blog - Expert Packaging Insights & Tips",
   description: "Unpack expert insights with a range of content from our packaging wizards, featuring in-depth guides, custom packaging tips and inspiring customer stories.",
 };
 
