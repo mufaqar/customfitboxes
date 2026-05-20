@@ -46,7 +46,7 @@ export default function BlogContent({ initialBlogs, categoriesWithCount }: BlogC
 
       <div className="flex md:flex-row flex-col gap-8">
         {/* Posts Grid */}
-        <div className="md:w-2/3 w-full grid md:grid-cols-2 gap-6">
+        <div className="md:w-full w-full grid md:grid-cols-2 gap-6">
           {/* Featured Post */}
           {featuredPost && (
             <div className="bg-[#f5f5f5] rounded h-full flex flex-col md:col-span-2">
