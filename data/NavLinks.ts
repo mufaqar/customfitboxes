@@ -80,8 +80,8 @@ export const Navlinks = [
         href: "/products",
         type: "dropdown" as const,
         children: [
-            { label: "Auto Lock", href: "/shapes/auto-lock" },
-            { label: "Tuck End", href: "/shapes/tuck-end" },
+            { label: "Burger Boxes", href: "/category/shapes-&-styles/burger-boxes" },
+            { label: "Essential Oil Boxes", href: "/category/shapes-&-styles/essential-oil-boxes" },
         ],
     },
 

@@ -1,27 +1,32 @@
 import SearchForm from '@/components/Header/SearchForm'
 import ProductBox from '@/components/products/ProductBox'
 
+import { sanityFetch } from '@/sanity/lib/live'
+import { SEARCH_PRODUCTS_QUERY } from '@/sanity/queries'
+
 async function getSearchResults(search: string) {
 
     try {
 
-        const res = await fetch(
-            `${process.env.NEXT_PUBLIC_BASE_URL}/api/search?name=${search}`,
-            {
-                cache: 'no-store',
-            }
-        )
+        if (!search) {
+            return []
+        }
 
-        return res.json()
+        const { data } = await sanityFetch({
+            query: SEARCH_PRODUCTS_QUERY,
+            params: {
+                search,
+            },
+            perspective: 'published',
+        }) as { data: any[] }
+
+        return data || []
 
     } catch (error) {
 
         console.log(error)
 
-        return {
-            success: false,
-            results: [],
-        }
+        return []
     }
 }
 
@@ -35,17 +40,15 @@ export default async function SearchPage({
 
     const query = params?.name || ''
 
-    const data = await getSearchResults(query)
-
-    const products = data?.results || []
+    const products = await getSearchResults(query)
 
     return (
         <>
             <section className='bg-background h-32 sm:h-60 flex items-center justify-center px-4'>
                 <div className='max-w-[530px] w-full mx-auto flex items-center justify-center px-4'>
-                   <div className='w-full'>
-                     <SearchForm />
-                   </div>
+                    <div className='w-full'>
+                        <SearchForm />
+                    </div>
                 </div>
             </section>
 
@@ -78,7 +81,7 @@ export default async function SearchPage({
 
                         products.map((product: any) => (
                             <ProductBox
-                                key={product._id || product.id}
+                                key={product._id}
                                 data={product}
                                 view='grid'
                             />

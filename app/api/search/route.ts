@@ -25,13 +25,13 @@ export async function GET(req: NextRequest) {
             )
         }
 
-       const { data: results } = await sanityFetch({
-    query: SEARCH_PRODUCTS_QUERY,
-    params: {
-        search: `*${name}*`,
-    },
-    perspective: "published",
-})
+        const { data: results } = await sanityFetch({
+            query: SEARCH_PRODUCTS_QUERY,
+            params: {
+                search: `*${name}*`,
+            },
+            perspective: "published",
+        })
 
         return NextResponse.json({
             success: true,

@@ -219,8 +219,8 @@ export const SEARCH_PRODUCTS_QUERY = defineQuery(`
   *[
     _type == "product" &&
     (
-      name match $search ||
-      shortDescription match $search
+      name match "*" + $search + "*" ||
+      shortDescription match "*" + $search + "*"
     )
   ] | order(_createdAt desc) {
 
