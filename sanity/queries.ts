@@ -214,3 +214,22 @@ export const ALL_TESTIMONIALS_QUERY = defineQuery(`
     "userImageAlt": userImage.alt
   }
 `)
+
+export const SEARCH_PRODUCTS_QUERY = defineQuery(`
+  *[
+    _type == "product" &&
+    (
+      name match $search ||
+      shortDescription match $search
+    )
+  ] | order(_createdAt desc) {
+
+    _id,
+    name,
+    "slug": slug.current,
+    shortDescription,
+
+    "mainImage": images[0].image.asset->url,
+    "imageAlt": images[0].alt
+  }
+`)

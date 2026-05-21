@@ -7,7 +7,7 @@ import { FaSearch } from 'react-icons/fa';
 const CatProducts = ({ products }: { products: any[] }) => {
   const [view, setView] = useState<"grid" | "list">("grid");
   return (
-    <section>
+    <section id='catProducts'>
       <div className='container mx-auto flex items-center justify-between mt-14 gap-y-5 gap-x-10 flex-wrap'>
         <div>
           <form className='bg-[#f5f5f5] h-12 w-80 items-center gap-x-3 rounded-md px-3 flex'>

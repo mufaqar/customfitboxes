@@ -98,7 +98,10 @@ const Faqs = ({ faqs }: { faqs?: any[] | null }) => {
               type='text'
               name='askQuestion'
               placeholder='What else would you like to know?'
-              className='bg-transparent p-0 outline-none border-none w-full text-sm sm:text-base px-3' />
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              className='bg-transparent p-0 outline-none border-none w-full text-sm sm:text-base px-3'
+            />
             <button type='submit' className='bg-primary text-white w-24 py-2 sm:text-base text-sm rounded-md'>
               {loading ? "Sending..." : "Send"}
             </button>

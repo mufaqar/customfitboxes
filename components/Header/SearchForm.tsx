@@ -14,7 +14,7 @@ const SearchForm = () => {
     if (!search.trim()) return;
 
     router.push(
-      `https://customfitboxes.com/search?name=${encodeURIComponent(search)}`
+      `/search?name=${encodeURIComponent(search)}`
     );
   };
 
