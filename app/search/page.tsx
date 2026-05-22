@@ -33,12 +33,12 @@ async function getSearchResults(search: string) {
 export default async function SearchPage({
     searchParams,
 }: {
-    searchParams: Promise<{ name?: string }>
+    searchParams: Promise<{ name?: string; search?: string }>
 }) {
 
     const params = await searchParams
 
-    const query = params?.name || ''
+    const query = params?.name || params?.search || ''
 
     const products = await getSearchResults(query)
 

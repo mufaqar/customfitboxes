@@ -26,7 +26,7 @@ const SearchForm = () => {
       <input
         type="text"
         id="search"
-        name="search"
+        name="name"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search by product, categories..."
