@@ -6,6 +6,7 @@ import { SanityLive } from "@/sanity/lib/live";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer";
+import CartProviderClient from "@/context/CartProviderClient";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -32,9 +33,11 @@ export default async function RootLayout({
       className={`${poppins.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <Header />
-        {children}
-        <Footer />
+        <CartProviderClient>
+          <Header />
+          {children}
+          <Footer />
+        </CartProviderClient>
         
         {/* Sanity features - only enabled in draft mode for Next.js 16 safety */}
         {isDraftMode && (

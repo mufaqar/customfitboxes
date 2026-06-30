@@ -3,6 +3,8 @@
 import React, { useState } from 'react'
 import BreadCrumb from '../BreadCrumb'
 import ProductGallery from './ProductGallery'
+import { useCart } from '@/context/CartContext'
+import { useRouter } from 'next/navigation'
 
 const ProBanner = ({ data }: any) => {
 
@@ -23,6 +25,11 @@ const ProBanner = ({ data }: any) => {
     const [file, setFile] = useState<File | null>(null)
 
     const [loading, setLoading] = useState(false)
+
+    const { addItem } = useCart()
+    const router = useRouter()
+
+    const pricePerBox = 0.85
 
     const handleChange = (
         e: React.ChangeEvent<
@@ -112,6 +119,30 @@ const ProBanner = ({ data }: any) => {
         }
     }
 
+    const handleAddToCart = () => {
+        const qty = parseInt(formData.quantity) || 100
+        const id = `${data?.slug}-${formData.color || 'default'}-${formData.stock || 'default'}`
+
+        addItem({
+            id,
+            name: data?.name || 'Custom Box',
+            slug: data?.slug || '',
+            image: data?.images?.[0]?.image || '',
+            quantity: qty,
+            pricePerBox,
+            color: formData.color || '1-Color',
+            stock: formData.stock || '12 PT',
+            dimensions: {
+                length: parseFloat(formData.length) || 0,
+                width: parseFloat(formData.width) || 0,
+                depth: parseFloat(formData.depth) || 0,
+                unit: formData.unit || 'Inches',
+            },
+        })
+
+        router.push('/checkout')
+    }
+
     return (
         <section className='py-10'>
             <div className='container mx-auto grid md:grid-cols-2 grid-cols-1 gap-10'>
@@ -132,6 +163,29 @@ const ProBanner = ({ data }: any) => {
                     </div>
 
                     <div className='mt-5'>
+
+                        <div className='border border-gray-200 rounded-lg p-5 mb-6 bg-gray-50'>
+                            <div className='flex items-center justify-between mb-4'>
+                                <span className='text-2xl font-bold text-primary'>
+                                    ${pricePerBox.toFixed(2)} <span className='text-sm font-normal text-gray-500'>/ per box</span>
+                                </span>
+                                <span className='flex items-center gap-1.5 text-sm font-medium text-green-600'>
+                                    <span className='w-2 h-2 rounded-full bg-green-500 inline-block'></span>
+                                    In Stock
+                                </span>
+                            </div>
+
+                            <div className='text-sm text-gray-600 space-y-1 mb-4'>
+                                <p>Bulk discounts available for 2,500+ units</p>
+                            </div>
+
+                            <button
+                                onClick={handleAddToCart}
+                                className='text-base font-normal uppercase text-white bg-primary hover:scale-105 transition-all duration-200 h-12 px-10 rounded-md w-full'
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
 
                         <form
                             onSubmit={handleSubmit}
