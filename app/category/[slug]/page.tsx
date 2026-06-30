@@ -23,7 +23,7 @@ export default async function CategoryPage({ params }: any) {
     <main>
       <Banner data={category} />
       <InstantQuote data={category}  />
-      <HeadingSection data={category} />
+      {/* <HeadingSection data={category} /> */}
       <CatProducts products={category.products || []} />
       <ScrollContent content={category.content} />
       <Faqs faqs={category.faqs || null} />
