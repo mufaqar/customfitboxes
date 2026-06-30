@@ -14,7 +14,7 @@ const ProductBox = ({ data, view }: Props) => {
 
   if (view === "list") {
     return (
-      <div className='flex md:flex-row flex-col items-center rounded-3xl overflow-hidden bg-[#f5f5f5] hover:drop-shadow-md duration-300'>
+      <Link href={`/product/${slug}`} className='flex md:flex-row flex-col items-center rounded-3xl overflow-hidden bg-[#f5f5f5] hover:drop-shadow-md duration-300'>
         <div className='md:w-1/5 w-full rounded-md h-60 flex items-center justify-center bg-background overflow-hidden'>
           {mainImage ? (
             <Image src={mainImage} alt={name} width={310} height={384} className='w-full h-full object-cover object-center' />
@@ -23,17 +23,17 @@ const ProductBox = ({ data, view }: Props) => {
           )}
         </div>
         <div className='md:w-4/5 w-full px-6 py-8 flex flex-col gap-y-4'>
-          <Link href={`/product/${slug}`} className='md:text-base font-semibold text-title'>
+          <span className='md:text-base font-semibold text-title'>
             {name}
-          </Link>
+          </span>
           <p className='text-sm text-desc'>{shortDesc}</p>
         </div>
-      </div>
+      </Link>
     );
   }
 
   return (
-    <div className='rounded-3xl overflow-hidden bg-[#f5f5f5] hover:drop-shadow-md duration-300'>
+    <Link href={`/product/${slug}`} className='rounded-3xl overflow-hidden bg-[#f5f5f5] hover:drop-shadow-md duration-300'>
       <div className='rounded-md flex items-center justify-center h-92 lg:h-96'>
         {mainImage ? (
           <Image src={mainImage} alt={name} width={310} height={384} className='w-full h-full object-cover object-center' />
@@ -42,11 +42,11 @@ const ProductBox = ({ data, view }: Props) => {
         )}
       </div>
       <div className='px-6 py-8 flex flex-col gap-y-4'>
-        <Link href={`/product/${slug}`} className='md:text-base font-semibold text-center text-title flex w-full justify-center items-center'>
+        <span  className='md:text-base font-semibold text-center text-title flex w-full justify-center items-center'>
           {name}
-        </Link>
+        </span>
       </div>
-    </div>
+    </Link>
   );
 };
 

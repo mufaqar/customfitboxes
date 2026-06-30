@@ -327,9 +327,9 @@ const ScrollContent = ({ content }: { content?: any }) => {
         <div className='md:w-1/3 w-full'>
           <div className='h-[480px] rounded-md overflow-hidden'>
             {content?.contentImage?.image ? (
-              <Image src={content.contentImage.image} alt={content.contentImage.alt || 'content'} width={504} height={504} className='w-full object-cover object-center scale-105' />
+              <Image src={content.contentImage.image} alt={content.contentImage.alt || 'content'} width={504} height={504} className='w-full h-full object-cover object-center scale-105' />
             ) : (
-              <Image src="/images/contenimg.png" alt='contenimg' width={504} height={504} className='w-full object-cover object-center scale-105' />
+              <Image src="/images/contenimg.png" alt='contenimg' width={504} height={504} className='w-full h-full object-cover object-center scale-105' />
             )}
           </div>
         </div>

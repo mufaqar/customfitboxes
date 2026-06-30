@@ -118,17 +118,18 @@ const ProBanner = ({ data }: any) => {
 
                 <ProductGallery images={data?.images || []} />
 
-                <div>
+                <div className='flex flex-col justify-between'>
+                    <div>
+                        <BreadCrumb title={data?.name} />
 
-                    <BreadCrumb title={data?.name} />
+                        <h1 className='text-3xl lg:text-4xl font-semibold my-3 text-primary'>
+                            {data?.name}
+                        </h1>
 
-                    <h1 className='text-3xl lg:text-4xl font-semibold my-3 text-primary'>
-                        {data?.name}
-                    </h1>
-
-                    <p className='text-base'>
-                        {data?.shortDescription || 'Custom packaging solution'}
-                    </p>
+                        <p className='text-base'>
+                            {data?.shortDescription || 'Custom packaging solution'}
+                        </p>
+                    </div>
 
                     <div className='mt-5'>
 

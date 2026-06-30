@@ -46,7 +46,7 @@ const Footer = () => {
                 </div>
                 <div className='md:col-span-3 grid md:grid-cols-4 grid-cols-1 gap-y-14 md:gap-y-0 gap-x-0 md:gap-x-5 lg:gap-x-8'>
                     <div className=''>
-                        <h6 className='font-semibold text-xl text-title sm:text-2xl'>Explore</h6>
+                        <p className='font-semibold text-xl text-title sm:text-2xl'>Explore</p>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
                                 <Link href="/why-us" className='font-normal cursor-pointer text-title hover:underline'>
@@ -77,7 +77,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className=''>
-                        <h6 className='font-semibold text-xl text-title sm:text-2xl'>Solutions</h6>
+                        <p className='font-semibold text-xl text-title sm:text-2xl'>Solutions</p>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
                                 <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
@@ -108,7 +108,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className=''>
-                        <h6 className='font-semibold text-xl text-title sm:text-2xl'>Products</h6>
+                        <p className='font-semibold text-xl text-title sm:text-2xl'>Products</p>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
                                 <Link href="#" className='font-normal cursor-pointer text-title hover:underline'>
@@ -139,7 +139,7 @@ const Footer = () => {
                         </ul>
                     </div>
                     <div className=''>
-                        <h6 className='font-semibold text-xl text-title sm:text-2xl'>Legals</h6>
+                        <p className='font-semibold text-xl text-title sm:text-2xl'>Legals</p>
                         <ul className='mt-8 flex flex-col gap-y-5'>
                             <li>
                                 <Link href="/privacy-policy" className='font-normal cursor-pointer text-title hover:underline'>

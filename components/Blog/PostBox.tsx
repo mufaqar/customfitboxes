@@ -19,7 +19,7 @@ type PostBoxProps = {
 
 export default function PostBox({ data }: PostBoxProps) {
   return (
-    <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
+    <Link href={`/blog/${data.slug}`} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
       {data.mainImage && (
         <Image
           src={data.mainImage}
@@ -35,11 +35,9 @@ export default function PostBox({ data }: PostBoxProps) {
             {data.category}
           </span>
         )}
-        <Link href={`/blog/${data.slug}`}>
-          <h3 className="text-xl font-semibold mt-2 hover:text-primary transition">
+          <p className="text-xl font-semibold mt-2 hover:text-primary transition">
             {data.title}
-          </h3>
-        </Link>
+          </p>
         <div className="flex items-center gap-2 mt-3">
           {data.author?.image && (
             <Image
@@ -59,6 +57,6 @@ export default function PostBox({ data }: PostBoxProps) {
         </div>
         <p className="text-sm text-gray-600 mt-2 line-clamp-3">{data.excerpt}</p>
       </div>
-    </div>
+    </Link>
   );
 }

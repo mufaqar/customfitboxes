@@ -4,9 +4,9 @@ const Banner = () => {
     return (
         <section className='pt-16 bg-background '>
             <div className='max-w-[900px] mx-auto   relative pb-16'>
-                <h1 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl leading-tight font-semibold text-primary text-center'>
+                <h2 className='text-3xl sm:text-2xl md:text-4xl xl:text-5xl leading-tight font-semibold text-primary text-center'>
                     Behind the Box
-                </h1>
+                </h2>
                 <p className='text-base leading-5 text-center opacity-70 mt-5 xl:mt-3 max-w-[833px] mx-auto'>
                     Unpack expert insights with a range of content from our packaging wizards, featuring in-depth guides, custom packaging tips and inspiring customer stories. Grow from beginner to pro with step-by-step articles on paper options, spot UV, Adobe Illustrator, image resolution, subscription boxes, digital proof guidelines, die-cutting, full color print techniques, ink coverage, corrugated cardboard, shipping strategy, box templates, and more from a trusted packaging industry leader.
                 </p>

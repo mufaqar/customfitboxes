@@ -12,7 +12,7 @@ const PostBanner = ({ data }: any) => {
             </li>
             <li>/</li>
             <li>
-              <Link href="/blog">Blog</Link>
+              <Link href="/blog">Blogs</Link>
             </li>
             <li>/</li>
             <li>

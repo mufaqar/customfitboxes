@@ -63,9 +63,9 @@ export default function SideBar({ posts, cat }: SideBarProps) {
   return (
     <div className='md:min-w-[30rem] sm:w-[30rem] w-full flex flex-col gap-8'>
       <div>
-        <h3 className='md:text-2xl text-xl font-semibold text-primary'>
+        <h1 className='md:text-2xl text-xl font-semibold text-primary'>
           Most Popular Posts:
-        </h3>
+        </h1>
         <div className='w-full p-3 bg-background rounded-xl mt-3 flex flex-col gap-4'>
           {latestPosts?.map((post: any, idx: number) => (
             <Link key={idx} href={`/blog/${post.slug}`} className='flex items-center gap-5 bg-white rounded-xl p-4'>
@@ -80,9 +80,9 @@ export default function SideBar({ posts, cat }: SideBarProps) {
         </div>
       </div>
       <div>
-        <h3 className='md:text-2xl text-xl font-semibold text-primary'>
+        <h1 className='md:text-2xl text-xl font-semibold text-primary'>
           Featured Categories:
-        </h3>
+        </h1>
         <div className='w-full p-3 bg-background rounded-xl mt-3 flex flex-col gap-4'>
           {cat.map((item: any, idx: number) => (
             <div key={idx} className='flex items-center gap-x-5 justify-between bg-white rounded-xl px-6 py-5'>
@@ -97,9 +97,9 @@ export default function SideBar({ posts, cat }: SideBarProps) {
         </div>
       </div>
       <div>
-        <h3 className='md:text-2xl text-xl font-semibold text-primary'>
+        <h1 className='md:text-2xl text-xl font-semibold text-primary'>
           Follow Us:
-        </h3>
+        </h1>
         <div className='w-full p-3 bg-background rounded-xl mt-3 flex flex-col gap-4'>
           <ul className='bg-white rounded-xl px-6 py-5 flex items-center gap-5'>
             <li>
@@ -151,9 +151,9 @@ export default function SideBar({ posts, cat }: SideBarProps) {
         </div>
       </div>
       <div className='overflow-hidden rounded-xl drop-shadow-xl w-full'>
-        <h3 className='text-xl lg:text-2xl bg-primary flex py-4 items-center justify-center text-white'>
+        <p className='text-xl lg:text-2xl bg-primary flex py-4 items-center justify-center text-white'>
           Get an Instant Quote
-        </h3>
+        </p>
         <form
           onSubmit={handleSubscribe}
           className='bg-[#f5f5f5] flex flex-col gap-6 pt-3 pb-5 px-3 lg:p-5'>
