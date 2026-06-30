@@ -11,18 +11,18 @@ import { notFound } from "next/navigation";
 export default async function CategoryPage({ params }: any) {
   const { slug } = await params;
 
-  const { data: category } = await sanityFetch({
+  const { data: category } = (await sanityFetch({
     query: CATEGORY_BY_SLUG_QUERY,
     params: { slug },
     perspective: "published",
-  }) as { data: any };
+  })) as { data: any };
 
   if (!category) return notFound();
 
   return (
     <main>
       <Banner data={category} />
-      <InstantQuote data={category}  />
+      <InstantQuote data={category} />
       {/* <HeadingSection data={category} /> */}
       <CatProducts products={category.products || []} />
       <ScrollContent content={category.content} />
