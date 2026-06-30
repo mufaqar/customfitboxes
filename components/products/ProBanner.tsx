@@ -30,6 +30,7 @@ const ProBanner = ({ data }: any) => {
     const router = useRouter()
 
     const pricePerBox = 0.85
+    const minOrderQty = 100
 
     const handleChange = (
         e: React.ChangeEvent<
@@ -165,18 +166,22 @@ const ProBanner = ({ data }: any) => {
                     <div className='mt-5'>
 
                         <div className='border border-gray-200 rounded-lg p-5 mb-6 bg-gray-50'>
-                            <div className='flex items-center justify-between mb-4'>
-                                <span className='text-2xl font-bold text-primary'>
-                                    ${pricePerBox.toFixed(2)} <span className='text-sm font-normal text-gray-500'>/ per box</span>
-                                </span>
-                                <span className='flex items-center gap-1.5 text-sm font-medium text-green-600'>
-                                    <span className='w-2 h-2 rounded-full bg-green-500 inline-block'></span>
-                                    In Stock
-                                </span>
-                            </div>
-
-                            <div className='text-sm text-gray-600 space-y-1 mb-4'>
-                                <p>Bulk discounts available for 2,500+ units</p>
+                            <div className='space-y-3 mb-5'>
+                                <div className='flex items-center justify-between'>
+                                    <span className='text-sm text-gray-600'>Starting Price:</span>
+                                    <span className='text-2xl font-bold text-primary'>${pricePerBox.toFixed(2)}</span>
+                                </div>
+                                <div className='flex items-center justify-between'>
+                                    <span className='text-sm text-gray-600'>Availability:</span>
+                                    <span className='flex items-center gap-1.5 text-sm font-medium text-green-600'>
+                                        <span className='w-2 h-2 rounded-full bg-green-500 inline-block'></span>
+                                        In Stock
+                                    </span>
+                                </div>
+                                <div className='flex items-center justify-between'>
+                                    <span className='text-sm text-gray-600'>Minimum Order Quantity:</span>
+                                    <span className='text-sm font-semibold text-gray-800'>{minOrderQty.toLocaleString()} units</span>
+                                </div>
                             </div>
 
                             <button

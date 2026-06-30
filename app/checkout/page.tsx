@@ -99,7 +99,15 @@ export default function CheckoutPage() {
 
                     <div className='flex-1 min-w-0'>
                       <h3 className='text-lg font-semibold text-gray-800'>Custom {item.name}</h3>
-                      <p className='text-sm text-gray-500'>
+                      <div className='flex flex-wrap gap-x-4 gap-y-1 text-sm text-gray-500 mt-1'>
+                        <span>Starting Price: <strong className='text-gray-800'>${item.pricePerBox.toFixed(2)}</strong></span>
+                        <span className='flex items-center gap-1 text-green-600'>
+                          <span className='w-1.5 h-1.5 rounded-full bg-green-500 inline-block'></span>
+                          In Stock
+                        </span>
+                        <span>Min Order: <strong className='text-gray-800'>100 units</strong></span>
+                      </div>
+                      <p className='text-sm text-gray-400 mt-0.5'>
                         {item.dimensions.length > 0 && `${item.dimensions.length}" x ${item.dimensions.width}" x ${item.dimensions.depth}"`}
                         {item.dimensions.length > 0 && ' | '}
                         {item.color} | {item.stock}
